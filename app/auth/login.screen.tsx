@@ -31,7 +31,7 @@ export default function LoginScreen() {
           <Leaf color="#FFFFFF" size={48} />
         </View>
         <Text className="text-white text-2xl font-bold mb-2">Welcome Back</Text>
-        <Text className="text-[#E8E8D0] text-base">Sign in to your garden</Text>
+        <Text className="text-[#E8E8D0] text-base">Sign in to your crx account</Text>
       </View>
 
       <View className="p-6">
