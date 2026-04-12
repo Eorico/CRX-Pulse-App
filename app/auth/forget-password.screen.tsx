@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Leaf, ChevronLeft } from 'lucide-react-native';
 import { useAuth } from '@/contexts/auth.context';
@@ -35,9 +35,13 @@ export default function ForgetPasswordScreen() {
           <ChevronLeft color="#FFFFFF" size={28} />
         </TouchableOpacity>
 
-        <View className="w-24 h-24 rounded-full bg-[#5A7A5A] justify-center items-center mb-6">
-          <Leaf color="#FFFFFF" size={48} />
+        <View className="w-[300px] justify-center items-center ml-[20px]">
+            <Image 
+            source={require('@/assets/images/Forgot.png')}
+            className='w-[410px] h-[250px]'
+            />
         </View>
+
         <Text className="text-white text-2xl font-bold mb-2">Reset Password</Text>
         <Text className="text-[#E8E8D0] text-base">Enter your email to reset</Text>
       </View>

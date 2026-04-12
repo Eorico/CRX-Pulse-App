@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert, Image } from 'react-native';
 import { useRouter } from 'expo-router';
-import { Leaf } from 'lucide-react-native';
+import { Leaf, ChevronLeft } from 'lucide-react-native';
 import { useAuth } from '@/contexts/auth.context';
 
 export default function RegisterScreen() {
@@ -33,9 +33,18 @@ export default function RegisterScreen() {
 
   return (
     <ScrollView className="flex-1 bg-[#F5F5DC]" contentContainerStyle={{ paddingBottom: 40 }}>
-      <View className="bg-[#3D5A3D] pt-16 pb-10 px-6 rounded-b-3xl items-center">
-        <View className="w-24 h-24 rounded-full bg-[#5A7A5A] justify-center items-center mb-6">
-          <Leaf color="#FFFFFF" size={48} />
+      <View className="bg-[#3D5A3D] pt-16 pb-10 px-6 rounded-b-3xl items-center h-[330px]">
+        <TouchableOpacity
+          className="absolute top-16 left-6 z-10"
+          onPress={() => router.back()}
+        >
+          <ChevronLeft color="#FFFFFF" size={28} />
+        </TouchableOpacity>
+        <View className="w-[300px] justify-center items-center ml-[20px]">
+            <Image 
+            source={require('@/assets/images/Register.png')}
+            className='w-[410px] h-[210px]'
+            />
         </View>
         <Text className="text-white text-2xl font-bold mb-2">Create Account</Text>
         <Text className="text-[#E8E8D0] text-base">Join us to start monitoring</Text>

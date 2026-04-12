@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
 import { useRouter } from 'expo-router';
-import { Leaf } from 'lucide-react-native';
 import { useAuth } from '@/contexts/auth.context';
 
 export default function LoginScreen() {
@@ -26,12 +25,15 @@ export default function LoginScreen() {
 
   return (
     <View className="flex-1 bg-[#F5F5DC] tfle">
-      <View className="bg-[#3D5A3D] pt-16 pb-10 px-6 rounded-b-3xl items-center">
-        <View className="w-24 h-24 rounded-full bg-[#5A7A5A] justify-center items-center mb-6">
-          <Leaf color="#FFFFFF" size={48} />
+      <View className="bg-[#3D5A3D] pt-16 pb-10 px-6 rounded-b-3xl items-center h-[400px]">
+        <View className="w-[300px] justify-center items-center">
+           <Image 
+            source={require('@/assets/images/Login.png')}
+            className='w-[400px] h-[250px]'
+           />
         </View>
-        <Text className="text-white text-2xl font-bold mb-2">Welcome Back</Text>
-        <Text className="text-[#E8E8D0] text-base">Sign in to your crx account</Text>
+        <Text className="text-white text-2xl font-bold mb-2">CRX-PULSE</Text>
+        <Text className="text-[#E8E8D0] text-base">Login into your crx account</Text>
       </View>
 
       <View className="p-6">
