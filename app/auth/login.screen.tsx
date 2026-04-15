@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
-import { useRouter } from 'expo-router';
 import { useAuth } from '@/contexts/auth.context';
+import { useRouter } from 'expo-router';
+import { useState } from 'react';
+import { Alert, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -29,7 +29,7 @@ export default function LoginScreen() {
         <View className="w-[300px] justify-center items-center">
            <Image 
             source={require('@/assets/images/Login.png')}
-            className='w-[400px] h-[250px]'
+            className='w-[350px] h-[190px]'
            />
         </View>
         <Text className="text-white text-2xl font-bold mb-2">CRX-PULSE</Text>

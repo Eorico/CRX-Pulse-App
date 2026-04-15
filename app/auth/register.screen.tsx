@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert, Image } from 'react-native';
-import { useRouter } from 'expo-router';
-import { Leaf, ChevronLeft } from 'lucide-react-native';
 import { useAuth } from '@/contexts/auth.context';
+import { useRouter } from 'expo-router';
+import { ChevronLeft } from 'lucide-react-native';
+import { useState } from 'react';
+import { Alert, Image, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function RegisterScreen() {
   const [name, setName] = useState('');
@@ -43,7 +43,7 @@ export default function RegisterScreen() {
         <View className="w-[300px] justify-center items-center ml-[20px]">
             <Image 
             source={require('@/assets/images/Register.png')}
-            className='w-[410px] h-[210px]'
+            className='w-[350px] h-[190px]'
             />
         </View>
         <Text className="text-white text-2xl font-bold mb-2">Create Account</Text>

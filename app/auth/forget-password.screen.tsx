@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
-import { useRouter } from 'expo-router';
-import { Leaf, ChevronLeft } from 'lucide-react-native';
 import { useAuth } from '@/contexts/auth.context';
+import { useRouter } from 'expo-router';
+import { ChevronLeft } from 'lucide-react-native';
+import { useState } from 'react';
+import { Alert, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function ForgetPasswordScreen() {
   const [email, setEmail] = useState('');
@@ -38,7 +38,7 @@ export default function ForgetPasswordScreen() {
         <View className="w-[300px] justify-center items-center ml-[20px]">
             <Image 
             source={require('@/assets/images/Forgot.png')}
-            className='w-[410px] h-[250px]'
+            className='w-[350px] h-[190px]'
             />
         </View>
 
