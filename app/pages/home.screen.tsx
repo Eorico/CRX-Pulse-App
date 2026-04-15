@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import { Menu } from 'lucide-react-native';
 import { CircularProgress } from '@/components/circular.tracker';
 import { DrawerMenu } from '@/components/drawer.menu';
+import { Menu } from 'lucide-react-native';
+import { useState } from 'react';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
 export default function HomeScreen() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -39,12 +39,12 @@ export default function HomeScreen() {
           <Text className="text-[#3D5A3D] text-base font-bold mb-4">Water Quality</Text>
           <View className="flex-row justify-around items-center">
             <CircularProgress value={24} maxValue={30} label="Temp" color="#3D5A3D" />
-            <CircularProgress value={0.25} maxValue={1} label="NH₃" color="#8B6F47" />
-            <CircularProgress value={4.2} maxValue={10} label="NTU" color="#3D5A3D" />
+            <CircularProgress value={0.25} maxValue={1} label="NH₃" color="#346739" />
+            <CircularProgress value={4.2} maxValue={10} label="NTU" color="#2F6B3F" />
           </View>
         </View>
 
-        <View className="bg-[#3D5A3D] rounded-2xl p-5 mb-4">
+        <View className="bg-[#468432] rounded-2xl p-5 mb-4">
           <Text className="text-[#E8E8D0] text-sm mb-2">Next Feeding</Text>
           <View className="flex-row justify-between items-center">
             <Text className="text-white text-4xl font-bold">2:30 PM</Text>

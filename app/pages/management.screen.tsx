@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { View, Text, ScrollView, Switch, TouchableOpacity } from 'react-native';
-import { CircleAlert as AlertCircle, Menu } from 'lucide-react-native';
 import { CircularProgress } from '@/components/circular.tracker';
 import { DrawerMenu } from '@/components/drawer.menu';
+import { CircleAlert as AlertCircle, Menu } from 'lucide-react-native';
+import { useState } from 'react';
+import { ScrollView, Switch, Text, TouchableOpacity, View } from 'react-native';
 
 export default function ManagementScreen() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -65,17 +65,17 @@ export default function ManagementScreen() {
         <View className="bg-white rounded-2xl p-5 mb-4 shadow-md">
           <View className="flex-row justify-around items-center">
             <CircularProgress value={24} maxValue={30} label="Temp" color="#3D5A3D" />
-            <CircularProgress value={0.25} maxValue={1} label="NH₃" color="#8B6F47" />
-            <CircularProgress value={4.2} maxValue={10} label="NTU" color="#3D5A3D" />
+            <CircularProgress value={0.25} maxValue={1} label="NH₃" color="#346739" />
+            <CircularProgress value={4.2} maxValue={10} label="NTU" color="#2F6B3F" />
           </View>
         </View>
 
         <View className="bg-[#FFF9E6] rounded-xl p-4 mb-4 border border-[#E6D5A8]">
           <View className="flex-row items-center mb-1">
             <AlertCircle color="#8B6F47" size={20} />
-            <Text className="text-[#8B6F47] text-sm font-bold ml-2">Water Status</Text>
+            <Text className="text-[#8B6F47] text-m font-bold ml-2">Water Status</Text>
           </View>
-          <Text className="text-[#8B6F47] text-xs ml-7">
+          <Text className="text-[#8B6F47] text-s ml-7">
             All parameters within optimal range
           </Text>
         </View>
@@ -85,9 +85,9 @@ export default function ManagementScreen() {
           <View className="space-y-3">
             {readings.map((reading, index) => (
               <View key={index} className="flex-row justify-between items-center">
-                <Text className="text-[#333] text-sm">{reading.time}</Text>
+                <Text className="text-[#333] text-s">{reading.time}</Text>
                 <View className="flex-row items-center space-x-2">
-                  <Text className="text-[#3D5A3D] text-sm font-semibold">{reading.temp}</Text>
+                  <Text className="text-[#3D5A3D] text-s font-semibold">{reading.temp}</Text>
                   <View className="w-1.5 h-1.5 rounded-full bg-[#3D5A3D]" />
                 </View>
               </View>
