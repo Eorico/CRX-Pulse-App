@@ -1,11 +1,9 @@
 import {useState} from 'react';
 import {View, Text, ScrollView, TouchableOpacity, Switch} from 'react-native';
-
 import { DrawerMenu } from '@/components/drawer.menu';
 import { CircularProgress } from '@/components/circular.tracker';
 import {Menu, Thermometer, Droplet, FlaskConical, Waves, RefreshCw} from 'lucide-react-native';
 
-/* ================= ICON SYSTEM ================= */
 const Icon = ({ type }: { type: string }) => {
   const size = 18;
   const color = '#FFFFFF';
@@ -64,8 +62,6 @@ export default function ManagementScreen() {
   const [waterQualityMonitoring, setWaterQualityMonitoring] = useState(true);
   const [automatedFeeding, setAutomatedFeeding] = useState(false);
   const [manualFlush, setManualFlush] = useState(false);
-
-  /* ================= LOG DATA ================= */
   const logs = [
     {
       time: '2:00 PM',
@@ -105,7 +101,6 @@ export default function ManagementScreen() {
     },
   ];
 
-  /* ================= METRICS ================= */
   const metrics = [
     { type: 'temp', value: '24.2°C', desc: 'Temperature', status: 'NORMAL' },
     { type: 'ph', value: '7.4 pH', desc: 'Acidity', status: 'NEUTRAL' },
@@ -116,10 +111,8 @@ export default function ManagementScreen() {
   return (
     <View className="flex-1 bg-[#F1F5F9]">
 
-      {/* DRAWER */}
       <DrawerMenu visible={drawerOpen} onClose={() => setDrawerOpen(false)} />
 
-      {/* HEADER */}
       <View className="bg-[#01377D] pt-16 pb-5 px-5 flex-row justify-between items-center">
         <Text className="text-white text-xl font-bold">CRX-Pulse</Text>
 
@@ -130,7 +123,6 @@ export default function ManagementScreen() {
 
       <ScrollView contentContainerStyle={{ padding: 16 }}>
 
-        {/* HERO */}
         <View className="bg-[#117554] rounded-2xl p-6 mb-5">
           <View className="bg-green-600 px-3 py-1 rounded-full self-start mb-3 self-center">
             <Text className="text-[11px] text-white font-bold text-center">
@@ -147,7 +139,6 @@ export default function ManagementScreen() {
           </Text>
         </View>
 
-        {/* CONTROLS */}
         <View className="space-y-3 mb-6">
 
           <View className="bg-white rounded-xl p-4 flex-row items-center justify-between shadow-sm mb-3">
@@ -221,7 +212,6 @@ export default function ManagementScreen() {
           </View>
         )}
 
-        {/* METRICS HEADER */}
         <View className="flex-row justify-between items-end mb-3">
           <Text className="text-xl font-bold text-[#0F172A]">
             Environmental Metrics
@@ -231,15 +221,12 @@ export default function ManagementScreen() {
           </Text>
         </View>
 
-        {/* METRICS GRID (FIXED) */}
         <View className="flex-row flex-wrap justify-between mb-5">
 
           {metrics.map((item, i) => (
             <View
               key={i}
-              className="bg-white rounded-xl p-4 w-[48%] mb-3 shadow-sm"
-            >
-              {/* ICON + STATUS */}
+              className="bg-white rounded-xl p-4 w-[48%] mb-3 shadow-sm">
               <View className="flex-row items-center justify-between mb-2">
                 <View className="w-8 h-8 bg-[#01377D] rounded-full items-center justify-center">
                   <Icon type={item.type} />
@@ -255,7 +242,6 @@ export default function ManagementScreen() {
 
         </View>
 
-        {/* LOGS */}
         <View className="bg-[#E5E7EB] rounded-2xl p-5">
 
           <Text className="text-lg font-bold mb-4 text-[#0F172A]">
@@ -273,8 +259,6 @@ export default function ManagementScreen() {
                   isLatest ? 'border-green-500' : 'border-gray-100'
                 } ${isOld ? 'opacity-50' : ''}`}
               >
-
-                {/* TOP */}
                 <View className="flex-row justify-between mb-3">
                   <View>
                     <Text className="font-semibold">{log.time}</Text>
@@ -283,7 +267,6 @@ export default function ManagementScreen() {
                   <View className="w-5 h-5 rounded-full bg-green-600" />
                 </View>
 
-                {/* METRICS */}
                 <View className="flex-row justify-between">
 
                   {[
