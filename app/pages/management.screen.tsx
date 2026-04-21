@@ -1,22 +1,9 @@
-import { useState } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  Switch,
-} from 'react-native';
+import {useState} from 'react';
+import {View, Text, ScrollView, TouchableOpacity, Switch} from 'react-native';
 
 import { DrawerMenu } from '@/components/drawer.menu';
 import { CircularProgress } from '@/components/circular.tracker';
-import {
-  Menu,
-  Thermometer,
-  Droplet,
-  FlaskConical,
-  Waves,
-  RefreshCw,
-} from 'lucide-react-native';
+import {Menu, Thermometer, Droplet, FlaskConical, Waves, RefreshCw} from 'lucide-react-native';
 
 /* ================= ICON SYSTEM ================= */
 const Icon = ({ type }: { type: string }) => {
